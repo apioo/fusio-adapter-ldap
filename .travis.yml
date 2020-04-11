@@ -6,6 +6,7 @@ php:
 sudo: false
 before_install:
   - if [ $TRAVIS_PHP_VERSION == '7.2' ]; then phpenv config-rm xdebug.ini; fi;
+  - phpenv config-add tests/config.ini
 install:
   - composer install
 script:

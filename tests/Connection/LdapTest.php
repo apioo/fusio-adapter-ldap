@@ -29,7 +29,7 @@ use Fusio\Engine\Form\Element\Select;
 use Fusio\Engine\Parameters;
 use Fusio\Engine\Test\EngineTestCaseTrait;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Ldap\Ldap as LdapConnection;
+use Symfony\Component\Ldap\LdapInterface;
 
 /**
  * LdapTest
@@ -55,7 +55,7 @@ class LdapTest extends TestCase
 
         $connection = $connectionFactory->getConnection($config);
 
-        $this->assertInstanceOf(LdapConnection::class, $connection);
+        $this->assertInstanceOf(LdapInterface::class, $connection);
     }
 
     public function testConfigure()

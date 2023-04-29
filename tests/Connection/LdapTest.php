@@ -21,14 +21,13 @@
 
 namespace Fusio\Adapter\Ldap\Tests\Connection;
 
+use Fusio\Adapter\Http\Tests\LdapTestCase;
 use Fusio\Adapter\Ldap\Connection\Ldap;
 use Fusio\Engine\Form\Builder;
 use Fusio\Engine\Form\Container;
 use Fusio\Engine\Form\Element\Input;
 use Fusio\Engine\Form\Element\Select;
 use Fusio\Engine\Parameters;
-use Fusio\Engine\Test\EngineTestCaseTrait;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Ldap\LdapInterface;
 
 /**
@@ -38,10 +37,8 @@ use Symfony\Component\Ldap\LdapInterface;
  * @license http://www.gnu.org/licenses/agpl-3.0
  * @link    https://www.fusio-project.org/
  */
-class LdapTest extends TestCase
+class LdapTest extends LdapTestCase
 {
-    use EngineTestCaseTrait;
-
     public function testGetConnection()
     {
         /** @var Ldap $connectionFactory */

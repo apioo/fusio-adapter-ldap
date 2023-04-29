@@ -6,6 +6,6 @@ LDAP. You can install the adapter with the following steps inside your Fusio
 project:
 
     composer require fusio/adapter-ldap
-    php bin/fusio system:register Fusio\Adapter\Ldap\Adapter
+    php bin/fusio system:register "Fusio\Adapter\Ldap\Adapter"
 
 [Fusio]: https://www.fusio-project.org/

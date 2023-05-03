@@ -21,8 +21,8 @@
 
 namespace Fusio\Adapter\Ldap\Tests\Connection;
 
-use Fusio\Adapter\Http\Tests\LdapTestCase;
 use Fusio\Adapter\Ldap\Connection\Ldap;
+use Fusio\Adapter\Ldap\Tests\LdapTestCase;
 use Fusio\Engine\Form\Builder;
 use Fusio\Engine\Form\Container;
 use Fusio\Engine\Form\Element\Input;

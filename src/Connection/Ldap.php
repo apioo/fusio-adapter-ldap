@@ -21,7 +21,7 @@
 
 namespace Fusio\Adapter\Ldap\Connection;
 
-use Fusio\Engine\ConnectionInterface;
+use Fusio\Engine\ConnectionAbstract;
 use Fusio\Engine\Form\BuilderInterface;
 use Fusio\Engine\Form\ElementFactoryInterface;
 use Fusio\Engine\ParametersInterface;
@@ -35,7 +35,7 @@ use Symfony\Component\Ldap\LdapInterface;
  * @license http://www.gnu.org/licenses/agpl-3.0
  * @link    https://www.fusio-project.org/
  */
-class Ldap implements ConnectionInterface
+class Ldap extends ConnectionAbstract
 {
     public function getName(): string
     {

@@ -21,11 +21,9 @@
 
 namespace Fusio\Adapter\Ldap\Tests;
 
-use Fusio\Adapter\Ldap\Connection\Ldap;
-use Fusio\Engine\Action\Runtime;
+use Fusio\Adapter\Ldap\Adapter;
 use Fusio\Engine\Test\EngineTestCaseTrait;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\DependencyInjection\Container;
 
 /**
  * LdapTestCase
@@ -38,8 +36,8 @@ abstract class LdapTestCase extends TestCase
 {
     use EngineTestCaseTrait;
 
-    protected function configure(Runtime $runtime, Container $container): void
+    protected function getAdapterClass(): string
     {
-        $container->set(Ldap::class, new Ldap());
+        return Adapter::class;
     }
 }

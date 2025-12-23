@@ -23,6 +23,7 @@ namespace Fusio\Adapter\Ldap\Tests\Connection;
 
 use Fusio\Adapter\Ldap\Connection\Ldap;
 use Fusio\Adapter\Ldap\Tests\LdapTestCase;
+use Fusio\Engine\ConfigurableInterface;
 use Fusio\Engine\Form\Builder;
 use Fusio\Engine\Form\Container;
 use Fusio\Engine\Form\Element\Input;
@@ -39,7 +40,7 @@ use Symfony\Component\Ldap\LdapInterface;
  */
 class LdapTest extends LdapTestCase
 {
-    public function testGetConnection()
+    public function testGetConnection(): void
     {
         /** @var Ldap $connectionFactory */
         $connectionFactory = $this->getConnectionFactory()->factory(Ldap::class);
@@ -55,11 +56,13 @@ class LdapTest extends LdapTestCase
         $this->assertInstanceOf(LdapInterface::class, $connection);
     }
 
-    public function testConfigure()
+    public function testConfigure(): void
     {
         $connection = $this->getConnectionFactory()->factory(Ldap::class);
         $builder    = new Builder();
         $factory    = $this->getFormElementFactory();
+
+        $this->assertInstanceOf(ConfigurableInterface::class, $connection);
 
         $connection->configure($builder, $factory);
 
